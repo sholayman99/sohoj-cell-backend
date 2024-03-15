@@ -1,4 +1,4 @@
-const createUser =async(req,dataModel)=>{
+const createUserService=async(req,dataModel)=>{
     try{
       let reqBody = req.body;
       let data = await dataModel.create(reqBody);
@@ -9,4 +9,4 @@ const createUser =async(req,dataModel)=>{
     }
 }
 
-module.exports = createUser;
+module.exports = createUserService;

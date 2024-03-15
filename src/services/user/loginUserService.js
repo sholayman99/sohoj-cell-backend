@@ -1,6 +1,6 @@
 const createToken = require("../../utility/tokenUtility");
 
-const loginUser = async(req,dataModel)=>{
+const loginUserService = async(req,dataModel)=>{
     try{
       let reqBody = req.body;
       let data = await dataModel.aggregate([
@@ -19,4 +19,4 @@ const loginUser = async(req,dataModel)=>{
     }
 }
 
-module.exports = loginUser ;
+module.exports = loginUserService ;
