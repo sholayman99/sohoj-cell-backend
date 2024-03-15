@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const dataSchema = mongoose.Schema({
     productName:{type:String , required:true},
     image:{type:String},
-    userName:{type:String,required:true},
+    userEmail:{type:String,required:true},
     mobile:{type:String,required:true},
     price:{type:String,required:true},
     edition:{type:String,required:true},
