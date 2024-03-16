@@ -3,6 +3,9 @@ const router = express.Router();
 
 const userController = require("../controllers/userController");
 const addController = require("../controllers/addController");
+const categoryController = require('../controllers/categoryController');
+const districtController = require('../controllers/districtController');
+const divisionController = require('../controllers/divisionContoller');
 const authVerify = require("../middlewares/authVerify");
 
 
@@ -22,6 +25,14 @@ router.get('/removeAdd/:id',authVerify,addController.removeAdd);
 router.get('/addList',authVerify,addController.addList);
 router.get('/listUserAdd',authVerify,addController.listUserAdd);
 
+//category
+router.get('/categoryList', categoryController.categoryList);
+
+//district
+router.get('/districtList' , districtController.districtList);
+
+//division
+router.get('/divisionList' , divisionController.divisionList);
 
 
 
