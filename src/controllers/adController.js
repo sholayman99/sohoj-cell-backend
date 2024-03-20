@@ -1,8 +1,8 @@
-const addModel = require("../models/addModel");
-const createAddService = require("../services/add/createAddService");
-const listUserAddService = require("../services/add/listUserAddService");
-const removeAddService = require("../services/add/removeAddService");
-const updateAddService = require("../services/add/updateAddService");
+const addModel = require("../models/adModel");
+const createAddService = require("../services/ad/createAdService");
+const listUserAddService = require("../services/ad/listUserAdService");
+const removeAddService = require("../services/ad/removeAdService");
+const updateAddService = require("../services/ad/updateAdService");
 const listItemService = require("../services/common/listItemService");
 
 

@@ -1,4 +1,4 @@
-const listUserAddService = async(req,dataModel)=>{
+const listUserAdService = async(req, dataModel)=>{
     try{
       let email = req.headers['email'];  
       let data = await dataModel.aggregate([
@@ -11,4 +11,4 @@ const listUserAddService = async(req,dataModel)=>{
     }
 }
 
-module.exports = listUserAddService;
+module.exports = listUserAdService;

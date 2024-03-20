@@ -9,8 +9,7 @@ module.exports = (req,res,next)=>{
             res.status(401).json({status:'unauthorized'});
         }
         else{
-            let email = decoded.data;
-            req.headers.email = email;
+            req.headers.email = decoded.data;
             next();
         }
     })

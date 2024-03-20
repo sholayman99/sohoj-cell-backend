@@ -1,4 +1,4 @@
-const updateAddService = async(req,dataModel)=>{
+const updateAdService = async(req, dataModel)=>{
     try{
       let id = req.params['id'];
       let email = req.headers['email'];
@@ -11,4 +11,4 @@ const updateAddService = async(req,dataModel)=>{
     }
 }
 
-module.exports = updateAddService;
+module.exports = updateAdService;

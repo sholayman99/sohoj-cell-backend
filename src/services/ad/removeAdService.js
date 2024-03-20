@@ -1,4 +1,4 @@
-const removeAddService = async(req,dataModel)=>{
+const removeAdService = async(req, dataModel)=>{
     try{
       let email = req.headers['email'];
       let id = req.params['id'];
@@ -10,4 +10,4 @@ const removeAddService = async(req,dataModel)=>{
     }
 }
 
-module.exports = removeAddService;
+module.exports = removeAdService;

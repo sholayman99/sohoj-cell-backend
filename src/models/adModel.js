@@ -16,10 +16,11 @@ const dataSchema = mongoose.Schema({
     negotiable:{type:String,required:true},
     brandName:{type:String,required:true},
     model:{type:String,required:true},
+    status:{type:String,required:true},
     description:{type:String,required:true}
 
 },
 {timestamps:true,versionKey:false});
 
-const addModel = mongoose.model("adds",dataSchema);
-module.exports = addModel;
+const adModel = mongoose.model("adds",dataSchema);
+module.exports = adModel;

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const userController = require("../controllers/userController");
-const addController = require("../controllers/addController");
+const addController = require("../controllers/adController");
 const categoryController = require('../controllers/categoryController');
 const districtController = require('../controllers/districtController');
 const divisionController = require('../controllers/divisionContoller');
@@ -18,7 +18,7 @@ router.get('/emailVerify/:email',userController.emailVerify);
 router.get('/otpVerify/:email/:otp',userController.otpVerify);
 router.post('/resetPass', userController.resetPass);
 
-//add
+//ad
 router.post('/createAdd' , authVerify , addController.createAdd);
 router.post('/updateAdd/:id' , authVerify , addController.updateAdd);
 router.get('/removeAdd/:id',authVerify,addController.removeAdd);

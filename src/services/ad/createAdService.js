@@ -1,4 +1,4 @@
-const createAddService = async(req,dataModel) =>{
+const createAdService = async(req, dataModel) =>{
     try{
       let email = req.headers['email'];
       let reqBody = req.body;
@@ -11,4 +11,4 @@ const createAddService = async(req,dataModel) =>{
     }
 }
 
-module.exports = createAddService;
+module.exports = createAdService;
