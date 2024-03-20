@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const userController = require("../controllers/userController");
-const addController = require("../controllers/adController");
+const adController = require("../controllers/adController");
 const categoryController = require('../controllers/categoryController');
 const districtController = require('../controllers/districtController');
 const divisionController = require('../controllers/divisionContoller');
@@ -19,11 +19,11 @@ router.get('/otpVerify/:email/:otp',userController.otpVerify);
 router.post('/resetPass', userController.resetPass);
 
 //ad
-router.post('/createAdd' , authVerify , addController.createAdd);
-router.post('/updateAdd/:id' , authVerify , addController.updateAdd);
-router.get('/removeAdd/:id',authVerify,addController.removeAdd);
-router.get('/addList',authVerify,addController.addList);
-router.get('/listUserAdd',authVerify,addController.listUserAdd);
+router.post('/createAd' , authVerify , adController.createAd);
+router.post('/updateAd/:id' , authVerify , adController.updateAd);
+router.get('/removeAd/:id',authVerify,adController.removeAd);
+router.get('/addList',authVerify,adController.adList);
+router.get('/listUserAd',authVerify,adController.listUserAd);
 
 //category
 router.get('/categoryList', categoryController.categoryList);

@@ -1,35 +1,35 @@
-const addModel = require("../models/adModel");
-const createAddService = require("../services/ad/createAdService");
-const listUserAddService = require("../services/ad/listUserAdService");
-const removeAddService = require("../services/ad/removeAdService");
-const updateAddService = require("../services/ad/updateAdService");
+const adModel = require("../models/adModel");
+const createAdService = require("../services/ad/createAdService");
+const listUserAdService = require("../services/ad/listUserAdService");
+const removeAdService = require("../services/ad/removeAdService");
+const updateAdService = require("../services/ad/updateAdService");
 const listItemService = require("../services/common/listItemService");
 
 
 
-exports.createAdd = async(req,res)=>{
-   let data = await createAddService(req,addModel);
+exports.createAd = async(req,res)=>{
+   let data = await createAdService(req,adModel);
    res.status(200).json(data);
 }
 
-exports.updateAdd = async(req,res)=>{
-    let data = await updateAddService(req,addModel);
+exports.updateAd = async(req,res)=>{
+    let data = await listUserAdService(req,adModel);
     res.status(200).json(data);
  }
 
 
- exports.removeAdd = async(req,res)=>{
-    let data = await removeAddService(req,addModel);
+ exports.removeAd = async(req,res)=>{
+    let data = await removeAdService(req,adModel);
     res.status(200).json(data);
  }
 
 
- exports.addList = async(req,res)=>{
-    let data = await listItemService(req,addModel);
+ exports.adList = async(req,res)=>{
+    let data = await listItemService(req,adModel);
     res.status(200).json(data);
  }
 
- exports.listUserAdd = async(req,res)=>{
-    let data = await listUserAddService(req,addModel);
+ exports.listUserAd = async(req,res)=>{
+    let data = await updateAdService(req,adModel);
     res.status(200).json(data);
  }
