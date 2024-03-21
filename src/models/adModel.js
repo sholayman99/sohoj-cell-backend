@@ -16,7 +16,7 @@ const dataSchema = mongoose.Schema({
     negotiable:{type:String,required:true},
     brandName:{type:String,required:true},
     model:{type:String,required:true},
-    status:{type:String,required:true},
+    status:{type:String,default:"Pending"},
     description:{type:String,required:true}
 
 },

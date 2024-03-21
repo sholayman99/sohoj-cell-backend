@@ -7,6 +7,7 @@ const categoryController = require('../controllers/categoryController');
 const districtController = require('../controllers/districtController');
 const divisionController = require('../controllers/divisionContoller');
 const authVerify = require("../middlewares/authVerify");
+const adminVerify = require("../middlewares/adminVerify");
 
 
 //user
