@@ -2,8 +2,9 @@ const updateAdService = async(req, dataModel)=>{
     try{
       let id = req.params['id'];
       let email = req.headers['email'];
-      console.log(id,email)
-      let data = await dataModel.updateOne({_id:id,userEmail:email},req.body);
+      let reqBody = req.body;
+      console.log(reqBody)
+      let data = await dataModel.updateOne({_id:id,userEmail:email},reqBody);
       return {status:'success',data:data};
     }
     catch(e){

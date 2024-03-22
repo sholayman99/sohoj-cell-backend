@@ -22,5 +22,5 @@ const dataSchema = mongoose.Schema({
 },
 {timestamps:true,versionKey:false});
 
-const adModel = mongoose.model("adds",dataSchema);
+const adModel = mongoose.model("ads",dataSchema);
 module.exports = adModel;
