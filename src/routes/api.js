@@ -18,10 +18,12 @@ router.get('/info',authVerify,userController.info);
 router.get('/emailVerify/:email',userController.emailVerify);
 router.get('/otpVerify/:email/:otp',userController.otpVerify);
 router.post('/resetPass', userController.resetPass);
+router.get("/userList", authVerify , userController.userList);
 
 //ad
 router.post('/createAd' , authVerify , adController.createAd);
 router.post('/updateAd/:id' , authVerify , adController.updateAd);
+router.post('/updateAdStatus/:productID/:status',authVerify,adminVerify,adController.updateAdStatus);
 router.get('/removeAd/:id',authVerify,adController.removeAd);
 router.get('/addList',authVerify,adController.adList);
 router.get('/listUserAd',authVerify,adController.listUserAd);

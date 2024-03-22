@@ -4,7 +4,7 @@ const listUserAdService = require("../services/ad/listUserAdService");
 const removeAdService = require("../services/ad/removeAdService");
 const updateAdService = require("../services/ad/updateAdService");
 const listItemService = require("../services/common/listItemService");
-
+const updateAdStatusService = require("../services/ad/updateAdStatusService");
 
 
 exports.createAd = async(req,res)=>{
@@ -33,3 +33,8 @@ exports.updateAd = async(req,res)=>{
     let data = await updateAdService(req,adModel);
     res.status(200).json(data);
  }
+
+exports.updateAdStatus = async(req,res)=>{
+    let data = await updateAdStatusService(req,adModel);
+    res.status(200).json(data);
+}

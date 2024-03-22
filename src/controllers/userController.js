@@ -7,6 +7,7 @@ const createUserService = require("../services/user/createUserService");
 const loginUserService = require("../services/user/loginUserService");
 const verifyOtpService = require("../services/user/verifyOtpService");
 const resetPassService = require("../services/user/resetPasswordService");
+const userListService = require("../services/user/userListService");
 
 
 exports.registration = async(req,res)=>{
@@ -42,5 +43,10 @@ exports.otpVerify = async(req,res)=>{
 
 exports.resetPass = async(req,res)=>{
     let data = await resetPassService(req,dataModel);
+    res.status(200).json(data);
+}
+
+exports.userList = async (req,res)=>{
+    let data = await userListService(req,dataModel);
     res.status(200).json(data);
 }
