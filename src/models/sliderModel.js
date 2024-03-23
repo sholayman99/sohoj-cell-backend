@@ -6,3 +6,4 @@ const dataSchema = mongoose.Schema({
     {versionKey:false,timestamps:true});
 
 const sliderModel = mongoose.model("sliders",dataSchema);
+module.exports = sliderModel;

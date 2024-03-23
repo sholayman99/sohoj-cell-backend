@@ -8,8 +8,8 @@ const listItemService = require("../services/common/listItemService");
 const updateAdStatusService = require("../services/ad/updateAdStatusService");
 const favouriteListService = require("../services/ad/favouriteListService");
 const searchByKeywordService = require("../services/ad/searchByKeywordService");
-
-
+const adDetailsService = require("../services/ad/adDetailsService");
+const filterAdService = require("../services/ad/filterAdService");
 
 exports.createAd = async(req,res)=>{
    let data = await createItemService(req,adModel);
@@ -46,9 +46,18 @@ exports.updateAdStatus = async(req,res)=>{
 
 exports.searchByKeyword = async (req,res)=>{
   let data = await searchByKeywordService(req,adModel);
+  res.status(200).json(data);
+}
+
+exports.adDetails = async (req,res)=>{
+    let data = await adDetailsService(req,adModel);
     res.status(200).json(data);
 }
 
+exports.filterAd = async (req,res)=>{
+    let data = await filterAdService(req,adModel);
+    res.status(200).json(data);
+}
 
 exports.createFavouriteList = async (req,res)=>{
     let data = await createItemService(req,favouriteModel);
