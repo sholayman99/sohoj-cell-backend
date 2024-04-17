@@ -12,10 +12,12 @@ const adDetailsService = async (req,dataModel)=>{
             {$unwind:"$district"},
             {$lookup:{from:"divisions",localField:"divisionID",foreignField:"_id",as:"division"}},
             {$unwind:"$division"},
-            {$project:
-                    {_id:0,createdAt:0,updatedAt:0,"category._id":0,"district._id":0,"division._id":0,
-                        districtID:0,divisionID:0,categoryID:0}
-            }
+            {$project:{
+                _id:1,
+                   createdAt:1,updatedAt:1,productName:1,image:1,price:1,condition:1,brandName:1,authenticity:1,
+                    features:1,model:1,description:1,"district.districtName":1,"division.divisionName":1,
+                    "category.categoryName":1,negotiable:1,mobile:1,userEmail:1
+                }}
         ]);
         return {status:"success",data:data};
     }

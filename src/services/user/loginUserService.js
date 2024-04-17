@@ -5,12 +5,18 @@ const loginUserService = async(req,dataModel)=>{
     try{
       let reqBody = req.body;
       let data = await dataModel.aggregate([
-        {$match:reqBody},{$project:{_id:0,fName:1,lName:1,email:1,password:1,role:1}}
+        {$match:reqBody},{$project:{_id:0,fullName:1,email:1,photo:1,role:1}}
       ]);
       if(data.length === 1){
         let token = await createToken(data[0]['email']);
-        let hash = await hashText(data[0]['role']);
-        return {status:'success' , token:token , role:hash};
+        let hash;
+        if(data[0]['role'] === "admin"){
+             hash = await hashText("adminRole");
+        }
+        else{
+            hash = await hashText("userRole")
+        }
+        return {status:'success' , token:token , role:hash , data:data[0]};
       }
       else{
        return  {status:'fail', data:"no user found!"};

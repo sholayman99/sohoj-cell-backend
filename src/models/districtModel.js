@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const dataSchema = mongoose.Schema({
-    district:{type:String , required:true}
+    districtName:{type:String , required:true}
 },
 {timestamps:true,versionKey:false});
 

@@ -14,6 +14,7 @@ const hpp = require("hpp");
 const xss = require("xss-clean");
 const mongoSanitize = require("express-mongo-sanitize");
 const { rateLimit } = require("express-rate-limit");
+const cookieParser = require("cookie-parser");
 
 const limiter = rateLimit({
     windowMs: 60 * 60 * 1000,
@@ -34,8 +35,9 @@ app.use(helmet());
 app.use(xss());
 app.use(mongoSanitize());
 app.use(limiter);
-app.use(express.json({extended:"50Mb"}));
-app.use(express.urlencoded({extended:"50Mb"}));
+app.use(express.json({extended:"100Mb"}));
+app.use(express.urlencoded({extended:"100Mb"}));
+app.use(cookieParser())
 
 
 //implementation of routes
