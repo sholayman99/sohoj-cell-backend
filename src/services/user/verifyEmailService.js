@@ -7,7 +7,7 @@ const verifyEmailService = async(req,dataModel)=>{
         let code = Math.round(Math.floor(100000+Math.random()*900000));
         let userCount = await dataModel.aggregate([{$match:{email:email}}]);
         if(userCount.length === 1){
-            await emailSend(email,"Sohoj Cell Verification",`Your Otp Verification Code Is : ${code}`)
+            await emailSend(email,"Sohoj Sell Verification",`Your Otp Verification Code Is : ${code}`)
             let data = await otpModel.create({email:email,otp:code});
             return {status:'success' , data:data}
         }

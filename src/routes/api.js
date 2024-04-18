@@ -30,7 +30,7 @@ router.post('/createAd' , authVerify , adController.createAd);
 router.post('/updateAd/:id' , authVerify , adController.updateAd);
 router.get('/removeAd/:id',authVerify,adController.removeAd);
 router.get('/adList/:pageNo/:perPage',adController.adList);
-router.get('/listUserAd',authVerify,adController.listUserAd);
+router.get('/listUserAd/:pageNo/:perPage',authVerify,adController.listUserAd);
 router.get("/searchByKeyword/:pageNo/:perPage/:keyword" , adController.searchByKeyword);
 router.get("/adDetails/:id",authVerify, adController.adDetails);
 router.get('/filterByDivision/:pageNo/:perPage/:divisionID', adController.filterByDivision);

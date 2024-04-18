@@ -12,7 +12,7 @@ const emailSend = async (email,emailSub,emailText)=>{
     });
 
     const options={
-        from:"Task Manager <info@teamrabbil.com>",
+        from:"Sohoj sell <info@teamrabbil.com>",
         to:email,
         subject:emailSub,
         text:emailText
