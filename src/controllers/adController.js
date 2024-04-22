@@ -1,6 +1,5 @@
 const adModel = require("../models/adModel");
 const favouriteModel = require("../models/favouriteModel");
-const divisionModel = require("../models/divisionModel");
 const createItemService = require("../services/common/createItemService");
 const listUserAdService = require("../services/ad/listUserAdService");
 const removeItemService = require("../services/common/removeItemService");

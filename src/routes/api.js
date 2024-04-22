@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const userController = require("../controllers/userController");
 const adController = require("../controllers/adController");
 const categoryController = require('../controllers/categoryController');
@@ -24,6 +23,7 @@ router.get('/emailVerify/:email',userController.emailVerify);
 router.get('/otpVerify/:email/:otp',userController.otpVerify);
 router.post('/resetPass', userController.resetPass);
 router.get("/count", authVerify , userController.count);
+router.get('/deleteAccount/:id',authVerify , userController.deleteAccount)
 
 //ad
 router.post('/createAd' , authVerify , adController.createAd);
@@ -62,7 +62,6 @@ router.get('/admin/updateAdStatus/:productID/:status',authVerify,adminVerify,adC
 router.get('/admin/adByStatusList/:pageNo/:perPage/:status',authVerify,adminVerify, adController.adByStatusList);
 router.get('/admin/removeUser/:id',authVerify,adminVerify, userController.removeUser);
 router.get("/admin/userList/:pageNo/:perPage", authVerify ,adminVerify, userController.userList);
-
 
 
 

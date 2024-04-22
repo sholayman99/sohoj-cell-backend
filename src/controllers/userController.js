@@ -10,6 +10,7 @@ const resetPassService = require("../services/user/resetPasswordService");
 const userListService = require("../services/user/userListService");
 const countService = require("../services/user/countService");
 const removeUserService = require("../services/user/removeUserService");
+const deleteAccountService = require("../services/user/deleteAccountService");
 
 
 exports.registration = async(req,res)=>{
@@ -92,4 +93,10 @@ exports.removeUser = async (req,res)=>{
     let data = await removeUserService(req,dataModel);
     res.status(200).json(data);
 }
+
+exports.deleteAccount = async (req,res)=>{
+    let data = await deleteAccountService(req,dataModel);
+    res.status(200).json(data);
+}
+
 
