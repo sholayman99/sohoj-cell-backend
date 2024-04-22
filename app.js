@@ -27,8 +27,9 @@ const limiter = rateLimit({
 //implementation of security middlewares.
 
 app.use(cors({
-    credentials:true,
-    origin:"http://localhost:5173"
+    origin:"http://localhost:5173",
+    credentials:true
+
 }));
 app.use(hpp());
 app.use(helmet());
