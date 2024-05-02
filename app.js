@@ -27,7 +27,7 @@ const limiter = rateLimit({
 //implementation of security middlewares.
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://sohojcell.vercel.app",
     credentials:true
 
 }));
